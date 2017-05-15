@@ -1,1 +1,166 @@
 /* You can add global styles to this file, and also import other style files */
+/* $bootstrap-sass-asset-helper: true;
+@import "~bootstrap-sass/assets/stylesheets/bootstrap"; */
+
+*, html, body {
+  margin: 0;
+}
+
+@mixin non-mobile {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: 1025px) and (max-width: 1366px) {
+    @content;
+  }
+}
+@mixin xlarge {
+  @media (min-width: 1367px) and (max-width: 1920px) {
+    @content;
+  }
+}
+@mixin xxlarge {
+  @media (min-width: 1921px) {
+    @content;
+  }
+}
+.container {
+  margin: 0 auto;
+  @include non-mobile {
+    width: 80vw;
+  }
+}
+.outer {
+  position: relative;
+}
+.header {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  .header-logo {
+    height: 2em;
+    width: auto;
+    @include non-mobile {
+      height: 3em;
+    }
+    @include xxlarge {
+      height: 4em;
+    }
+  }
+}
+.nav {
+  background: url('assets/gradient_big.png') no-repeat;
+  background-size: cover;
+  @include non-mobile {
+    height: 14rem;
+  }
+  &-carousel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 5rem;
+    @include xxlarge {
+      height: 6rem;
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.625em;
+      &--label {
+        font-size: 0.8em;
+        @include non-mobile {
+          font-size: 1em;
+        }
+        @include xxlarge {
+          font-size: 1.2em;
+        }
+        color: white;
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+}
+.banner {
+  @include non-mobile {
+    margin-top: -9rem;
+  }
+  @include xxlarge {
+    margin-top: -8rem;
+  }
+  position: relative;
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+  &-content {
+    color: white;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-size: 0.7rem;
+    width: 90vw;
+    @include non-mobile {
+      width: 50vw;
+      font-size: 1rem;
+    }
+  }
+}
+.quote-card {
+  background-color: #6bc200;
+  height: 8rem;
+  margin: 0 0.2rem;
+  @include non-mobile {
+    position: absolute;
+    width: 12rem;
+    height: 15em;
+    right: 6vw;
+    bottom: -4vw;
+  }
+  @include medium {
+    width: 10rem;
+    height: 12rem;
+  }
+}
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f7f9;
+  margin-top: 0.2rem;
+  .item {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    @include non-mobile {
+      height: 8rem;
+      width: 30%;
+    }
+    &-common {
+      margin: 0.5em;
+    }
+    &-icon {
+      background: url('assets/spritev1.1.png') no-repeat;
+      background-position: -102px -412px;
+      height: 45px;
+      width: 45px;
+    }
+    &:hover {
+      background-color: #e8eaed;
+      cursor: pointer;
+    }
+  }
+}
